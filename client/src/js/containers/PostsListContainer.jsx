@@ -16,9 +16,10 @@ export default class PostListContainer extends Component {
   }
 
   render() {
+    console.log(this.props);
     let { loading, posts } = this.props.posts;
     posts = posts.sort((a, b) => { return a.publishedAt - b.publishedAt }).reverse()
-    const list = (posts && loading == false) ? posts.map(post => <PostContainer post={post} /> ) : ""
+    const list = (posts && loading == false) ? posts.map(post => <PostContainer post={post} key={post.id} /> ) : ""
 
     return (
     	<div>

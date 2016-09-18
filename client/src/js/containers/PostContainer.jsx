@@ -23,7 +23,7 @@ export default class PostContainer extends Component {
     const post = this.props.post
 
     return (
-      <article className='post' key={post.id}>
+      <article className='post'>
         <h1>{post.title}</h1>
         <TimeAgo date={post.publishedAt * 1000} minPeriod={60} />
         <button onClick={ this.deletePost.bind(this) }>delete</button>

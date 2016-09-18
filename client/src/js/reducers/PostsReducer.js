@@ -1,5 +1,5 @@
 import {
-	FETCH_POSTS,
+  FETCH_POSTS,
   FETCH_POSTS_SUCCESS,
   FETCH_POSTS_FAILURE,
   ADD_POST,
@@ -25,8 +25,8 @@ export default function(state = INITIAL_STATE, action) {
   case ADD_POST_SUCCESS:
     return {...state, postsList: { posts: [action.payload, ...state.postsList.posts], error: null, loading: false } }
   case DELETE_POST_SUCCESS:
-    let postList = state.postsList.posts.filter( function(post) { return post.id != action.payload.id } )
-    return {...state, postsList: { posts: [postList], error: null, loading: false } }
+    const posts = state.postsList.posts.filter((post) => { return post.id !== action.payload.id })
+    return {...state, postsList: { posts: posts, error: null, loading: false } }
   default:
     return state;
   }
