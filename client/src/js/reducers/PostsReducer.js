@@ -9,7 +9,7 @@ import {
 } from '../actions/PostsActions';
 
 
-const INITIAL_STATE = { postsList: {posts: [], error:null, loading: false}};
+const INITIAL_STATE = { postsList: { posts: [], error: null, loading: false } };
 
 export default function(state = INITIAL_STATE, action) {
   let error;
