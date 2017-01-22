@@ -14,28 +14,28 @@ export const DELETE_POST_FAILURE = 'DELETE_POST_FAILURE';
 
 
 export const fetchPosts = () => ({
-	[CALL_API]: {
+  [CALL_API]: {
     types: [FETCH_POSTS, FETCH_POSTS_SUCCESS, FETCH_POSTS_FAILURE],
     endpoint: 'http://0.0.0.0:3001/api/posts',
     method: 'GET',
-	}
+  }
 });
 
 export const addPost = (data) => ({
-	[CALL_API]: {
+  [CALL_API]: {
     types: [ADD_POST, ADD_POST_SUCCESS, ADD_POST_FAILURE],
     endpoint: 'http://0.0.0.0:3001/api/post',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
-	}
+  }
 });
 
 export const deletePost = (id) => ({
-	[CALL_API]: {
+  [CALL_API]: {
     types: [DELETE_POST, DELETE_POST_SUCCESS, DELETE_POST_FAILURE],
     endpoint: `http://0.0.0.0:3001/api/post/${id}`,
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' }
-	}
+  }
 });
